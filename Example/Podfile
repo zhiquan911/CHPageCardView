@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CHPageCardView_Example' do
+  pod 'CHPageCardView', :path => '../'
+
+  target 'CHPageCardView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

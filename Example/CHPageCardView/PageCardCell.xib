@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="XWd-dW-8Ne" customClass="PageCardCell" customModule="CHPageCardView_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="170"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="170"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2U-uw-b9T">
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="170"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWo-Zh-vbc">
+                                <rect key="frame" x="8" y="130" width="264" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1CpeMXRw7xW9ySBZgchpbY7ZxRCdxFxZYj" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="aIw-91-DDL">
+                                        <rect key="frame" x="4" y="0.0" width="256" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.29914607558139533" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="aIw-91-DDL" firstAttribute="leading" secondItem="gWo-Zh-vbc" secondAttribute="leading" constant="4" id="NGq-7b-8rZ"/>
+                                    <constraint firstAttribute="height" constant="25" id="eQh-RO-vRq"/>
+                                    <constraint firstItem="aIw-91-DDL" firstAttribute="top" secondItem="gWo-Zh-vbc" secondAttribute="top" id="oC6-Hd-XZH"/>
+                                    <constraint firstAttribute="trailing" secondItem="aIw-91-DDL" secondAttribute="trailing" constant="4" id="psG-5j-sJ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="aIw-91-DDL" secondAttribute="bottom" id="rMi-eR-Qgy"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJC-XJ-UjO">
+                                <rect key="frame" x="8" y="12" width="75.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="bzb-HC-QkB">
+                                <rect key="frame" x="168" y="10" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TRq-8M-cGs"/>
+                                    <constraint firstAttribute="width" constant="100" id="XLV-q0-sNc"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1468449497" green="0.48623440890000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oJC-XJ-UjO" firstAttribute="top" secondItem="t2U-uw-b9T" secondAttribute="top" constant="12" id="4DS-NU-Rdq"/>
+                            <constraint firstItem="oJC-XJ-UjO" firstAttribute="leading" secondItem="t2U-uw-b9T" secondAttribute="leading" constant="8" id="Hww-NI-Y28"/>
+                            <constraint firstAttribute="trailing" secondItem="bzb-HC-QkB" secondAttribute="trailing" constant="12" id="Maz-sS-wTy"/>
+                            <constraint firstAttribute="trailing" secondItem="gWo-Zh-vbc" secondAttribute="trailing" constant="8" id="U3D-EF-Ce9"/>
+                            <constraint firstItem="gWo-Zh-vbc" firstAttribute="leading" secondItem="t2U-uw-b9T" secondAttribute="leading" constant="8" id="iep-uY-oEH"/>
+                            <constraint firstItem="gWo-Zh-vbc" firstAttribute="top" secondItem="bzb-HC-QkB" secondAttribute="bottom" constant="20" id="kTS-DM-7ds"/>
+                            <constraint firstAttribute="bottom" secondItem="gWo-Zh-vbc" secondAttribute="bottom" constant="15" id="lKt-4V-3Hy"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="t2U-uw-b9T" secondAttribute="trailing" id="9hN-15-jFM"/>
+                <constraint firstItem="t2U-uw-b9T" firstAttribute="leading" secondItem="XWd-dW-8Ne" secondAttribute="leading" id="HwV-Ih-TqC"/>
+                <constraint firstAttribute="bottom" secondItem="t2U-uw-b9T" secondAttribute="bottom" id="ZJj-fe-ld3"/>
+                <constraint firstItem="t2U-uw-b9T" firstAttribute="top" secondItem="XWd-dW-8Ne" secondAttribute="top" id="gbe-f2-rD3"/>
+            </constraints>
+            <size key="customSize" width="280" height="150"/>
+            <point key="canvasLocation" x="75" y="56"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="qrcode" width="100" height="100"/>
+    </resources>
+</document>

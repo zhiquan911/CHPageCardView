@@ -1,0 +1,16 @@
+PODS:
+  - CHPageCardView (0.1.0)
+
+DEPENDENCIES:
+  - CHPageCardView (from `../`)
+
+EXTERNAL SOURCES:
+  CHPageCardView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CHPageCardView: 744d04a9a86cc2e732900291195b0037214d8db9
+
+PODFILE CHECKSUM: 29bb021cdbaf542f4a909d8c003157c52883e5c7
+
+COCOAPODS: 1.2.0.beta.3
