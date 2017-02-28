@@ -78,20 +78,7 @@ public class CHPageCardView: UIView {
     
     
     /// 单元格固定内间距，如果使用了fixPadding，则fixCellSize不起效果
-    @IBInspectable public var fixPadding: UIEdgeInsets = UIEdgeInsets.zero {
-        didSet {
-            if self.fixPadding != .zero {
-                //如果设置了固定内间距，重新计算cell的尺寸
-                let vPadding = self.fixPadding.top > self.fixPadding.bottom ? self.fixPadding.top : self.fixPadding.bottom
-                let hPadding = self.fixPadding.left > self.fixPadding.right ? self.fixPadding.left : self.fixPadding.right
-                
-                let height = self.bounds.size.height - vPadding * 2
-                let width = self.bounds.size.width - (hPadding + self.fixLineSpace) * 2
-                
-                self.fixCellSize = CGSize(width: width, height: height)
-            }
-        }
-    }
+    @IBInspectable public var fixPadding: UIEdgeInsets = UIEdgeInsets.zero
     
     @IBInspectable public var bgImage: UIImage? {
         didSet {
@@ -121,6 +108,20 @@ public class CHPageCardView: UIView {
     public override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        if self.fixPadding != .zero {
+            //如果设置了固定内间距，重新计算cell的尺寸
+            let vPadding = self.fixPadding.top > self.fixPadding.bottom ? self.fixPadding.top : self.fixPadding.bottom
+            let hPadding = self.fixPadding.left > self.fixPadding.right ? self.fixPadding.left : self.fixPadding.right
+            
+            let height = self.bounds.size.height - vPadding * 2
+            let width = self.bounds.size.width - (hPadding + self.fixLineSpace) * 2
+            
+            self.fixCellSize = CGSize(width: width, height: height)
+        }
     }
     
     
@@ -223,6 +224,17 @@ public class CHPageCardView: UIView {
     public func register(nib: UINib?, forCellWithReuseIdentifier identifier: String) {
         self.collectionView.register(nib, forCellWithReuseIdentifier: identifier)
     }
+    
+    
+    public func scroll(toIndex index: Int, animated animated: Bool) {
+        let indexPath = IndexPath(row: index, section: 0)
+        let attr = self.collectionView.layoutAttributesForItem(at: indexPath)
+
+        self.collectionView.scrollToItem(at: attr!.indexPath, at: .centeredHorizontally, animated: animated)
+        
+        self.layout.previousOffsetX = CGFloat(index) * (self.fixCellSize.width + self.fixLineSpace)
+        self.pageControl.currentPage = index
+    }
 }
 
 
@@ -231,6 +243,7 @@ extension CHPageCardView: CHPageCardFlowLayoutDelegate {
     
     func scrollToPageIndex(index: Int) {
         self.pageControl.currentPage = index
+        self.delegate?.pageCardView(self, didSelectIndexAt: index)
     }
     
 }

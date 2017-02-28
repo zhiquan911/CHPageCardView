@@ -94,7 +94,7 @@ class CHPageCardFlowLayout: UICollectionViewFlowLayout {
             self.previousOffsetX += self.itemSize.width + self.minimumLineSpacing
             self.pageNum = Int(self.previousOffsetX / (self.itemSize.width + self.minimumLineSpacing))
             self.delegate?.scrollToPageIndex(index: self.pageNum)
-        } else {
+        } else if proposedContentOffset.x < self.previousOffsetX - self.itemSize.width / 3.0 {
             self.previousOffsetX -= self.itemSize.width + self.minimumLineSpacing
             self.pageNum = Int(self.previousOffsetX / (self.itemSize.width + self.minimumLineSpacing))
             self.delegate?.scrollToPageIndex(index: self.pageNum)
