@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         //self.pageCardView.fixCellSize = CGSize(width: 260, height: 170)
         
         //使用固定的内间距控制单元格的大小，这样可以做到不同手机尺寸自动约束布局
-        self.pageCardView.fixPadding = UIEdgeInsets(top: 22, left: 20, bottom: 22, right: 20)
+        self.pageCardView.fixPadding = UIEdgeInsets(top: 26, left: 24, bottom: 26, right: 24)
         
     }
     

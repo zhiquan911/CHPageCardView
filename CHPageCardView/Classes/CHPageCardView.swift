@@ -226,7 +226,12 @@ public class CHPageCardView: UIView {
     }
     
     
-    public func scroll(toIndex index: Int, animated animated: Bool) {
+    /// 滚动到某个位置
+    ///
+    /// - Parameters:
+    ///   - index:  滚动的目标索引未
+    ///   - animated:   是否动画
+    open func scroll(toIndex index: Int, animated animated: Bool) {
         let indexPath = IndexPath(row: index, section: 0)
         let attr = self.collectionView.layoutAttributesForItem(at: indexPath)
 
@@ -234,6 +239,14 @@ public class CHPageCardView: UIView {
         
         self.layout.previousOffsetX = CGFloat(index) * (self.fixCellSize.width + self.fixLineSpace)
         self.pageControl.currentPage = index
+    }
+    
+    
+    /// 重新加载
+    open func reloadData() {
+        if self.collectionView != nil {
+            self.collectionView.reloadData()
+        }
     }
 }
 
