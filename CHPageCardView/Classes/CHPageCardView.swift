@@ -253,9 +253,15 @@ public class CHPageCardView: UIView {
     /// 更新索引位单元格对象
     ///
     /// - Parameter index: 索引位
-    open func reloadItems(at index: Int) {
+    open func reloadItems(at index: Int, animated animated: Bool = true) {
         let indexPath = IndexPath(row: index, section: 0)
-        self.collectionView.reloadItems(at: [indexPath])
+        if animated {
+            self.collectionView.reloadItems(at: [indexPath])
+        } else {
+            UIView.performWithoutAnimation {
+                self.collectionView.reloadItems(at: [indexPath])
+            }
+        }
     }
 }
 
