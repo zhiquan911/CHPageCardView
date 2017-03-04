@@ -9,6 +9,8 @@
 import UIKit
 
 class PageCardCell: UICollectionViewCell {
+    
+    @IBOutlet var labelNickname: UILabel!
      
     class var cellIdentifier: String{
         
